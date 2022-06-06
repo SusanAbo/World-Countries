@@ -54,7 +54,7 @@ const CountriesGrid = ({landName , flag , idLand , countries})=>{
             </Link>
                     <div className="card-body" style= {{position:'relative' , button: 0}}>
                     <h3 className="card-title text-danger ">{'📍 '+landName}</h3> 
-                    <p><small className="text-muted">{idLand}</small></p>
+                    <p><small className="text-muted">id :{idLand}</small></p>
             
 
                     <div className="card-footer bg-transparent">
