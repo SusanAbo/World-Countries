@@ -27,6 +27,7 @@ export default function Home() {
                        
                     </div>
             </div>
+            <button className='btn' onClick={localStorage.clear()}>🗑</button>
         </div>
     )
 }

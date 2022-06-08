@@ -1,4 +1,4 @@
-import React , {useState , createContext} from "react";
+import React , {useState , createContext, useEffect} from "react";
 
 export const ThemeContext = createContext();
 
@@ -21,10 +21,29 @@ const ThemeContextProvider = (props)=>{
         
         setLandLayout({...landLayout , istDark : ! landLayout.istDark})
     }
+ 
+    let visitedStorage = JSON.parse(localStorage.getItem('visited'))
+    let wishedStorage = JSON.parse(localStorage.getItem('wished'))
+
+
+    const [visited , setVisited]= useState(visitedStorage);
+    const [wished, setWished] = useState(wishedStorage);
+
+  
+
+    useEffect( () => {
+         localStorage.setItem('wished', JSON.stringify(wished))
+         console.log(wished)
+         console.log(localStorage)
+    }, [wished]);
+
+    useEffect( () => {
+        localStorage.setItem('visited', JSON.stringify(visited))
+   }, [visited]);
 
 
     return(
-        <ThemeContext.Provider value={{landLayout , toggleLayout}}>
+        <ThemeContext.Provider value={{landLayout , toggleLayout, visited, setVisited, wished, setWished}}>
             {props.children}
         </ThemeContext.Provider>
     )

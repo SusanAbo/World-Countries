@@ -1,51 +1,14 @@
-import React, { useContext, useState , useEffect } from "react";
-import Country from "./Country";
+import React, { useContext } from "react";
 import {Link} from 'react-router-dom'
 import { ThemeContext } from "../context/ThemeContext";
 
 
-const CountriesGrid = ({landName , flag , idLand , countries})=>{
-    const {landLayout} = useContext(ThemeContext);
-    const { istDark , hell , dark } = landLayout;
-    const layout = istDark ? dark : hell ;
-    
-    const [land, setLand] = useState([]);
-     const [visited , setVisited]= useState([]);
-     const [wished, setWished] = useState([]);
+const CountriesGrid = ({landName , flag , idLand, country })=>{
+    const {wished, setWished, visited, setVisited} = useContext(ThemeContext);
 
-    console.log('visited' , visited);
-    console.log('wished' , wished);
-    
-
-    useEffect(()=>{
-            let oldWishList = localStorage.getItem('wished');
-            let parsedWishList = JSON.parse(oldWishList);
-            setWished(parsedWishList)
-        },[]);
-
-    useEffect( () => {
-        localStorage.setItem('wished', JSON.stringify(wished))
-    }, [wished]);
-    
-    const visitedLand = (id , name)=>{
-        let countriesCopy = countries && countries.map((land)=>{
-            return land.area === id ? ({...land , isVisited : true}) : (land)
-        });
-        setLand(countriesCopy)
-        setVisited([...visited , name])
-    }
-
-    const wishedLand = (id , name)=>{
-        let countriesCopy = countries && countries.map((land)=>{
-            return land.area === id ? ({...land , isWished : true}) : (land)
-        });
-        setLand(countriesCopy)
-        setWished([...wished , name])
-    }
 
     return(
-        <div className="lands-card card" 
-                     style={{color: layout.text, background: layout.hintergrund , filter: layout.filter}}>
+        <div className="lands-card card"  >
 
             <Link to={'/all_countries/'+landName} > 
                     <div className="card-img">
@@ -60,19 +23,22 @@ const CountriesGrid = ({landName , flag , idLand , countries})=>{
                     <div className="card-footer bg-transparent">
                     
                     <button className='btn btn-outline-success m-1'
-                    onClick={(e)=>{ 
-                        e.preventDefault()
-                        console.log(landName);
-                        visitedLand(idLand ,landName)
-                    }} 
+                        onClick={(e)=>{ 
+                            e.preventDefault()
+                            let newVisited = [...visited]
+                            newVisited.push(country)
+                            setVisited(newVisited)
+                        }} 
                     >Visited</button>
 
                     <button className='btn btn-outline-secondary m-1'
-                    onClick={(e)=>{
-                        e.preventDefault()
-                        console.log('idLand',idLand);
-                        wishedLand(idLand ,landName)
-                    }}
+                        onClick={(e)=>{
+                            e.preventDefault()
+                            let newWished = [...wished]
+                            newWished.push(country)
+                            setWished(newWished)
+                            //wishedLand(idLand ,landName)
+                        }}
                     >wish to visit</button>
 
                     </div>
@@ -84,3 +50,6 @@ const CountriesGrid = ({landName , flag , idLand , countries})=>{
 }
 
 export default CountriesGrid
+
+
+//  style={{color: layout.text, background: layout.hintergrund , filter: layout.filter}}
