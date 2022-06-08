@@ -1,29 +1,43 @@
-import React, {useParams , useState} from 'react';
-
+import React, { useState} from 'react'; 
+import SearchedLandCard from './SearchedLandCard';
 
 
 const Search = ({countries})=>{
-    let {search} = useParams()
-    const [inputValue , setInputValue] = useState('')
     
+    const [inputValue , setInputValue] = useState('')
+    const [foundLand , setFoundLand]= useState('')
 
+    const searchFunction = ()=>{
+        const gefunden = countries && countries.find((country)=>country.name.toLowerCase() === inputValue.toLowerCase())
+        if(gefunden){
+            setFoundLand(gefunden)
+        }
+        console.log('foundLand', foundLand);
+    }
     return(
         
-            <div className='home-items'>
+            <div className='container' style={{maxWidth : '600px' , marginTop : '50px'}}>
                 <form className="d-flex">
-                    <input className="form-control me-2" type="search"
-                        placeholder="Search" aria-label="Search"
-                        onChange={(e)=>setInputValue(e.target.value)} 
-                        value={inputValue}/>
-                       
-                    <button className="btn btn-outline-secondary" type="submit"></button>
+                        <input className="form-control me-2" type="search"
+                            placeholder="Search for a country 🔎" aria-label="Search"
+                            onChange={(e)=>setInputValue(e.target.value)} 
+                            value={inputValue}/>
+                        
+                        <button className="btn btn-outline-secondary" type="submit" 
+                            onClick={(e)=>{
+                                e.preventDefault()
+                                searchFunction()
+                                setInputValue('')
+                            }
+                        }>𝙎𝙚𝙖𝙧𝙘𝙝</button>
                 </form>
-                {/* <div>
-                {
-                  countries && countries.filter(land=>land.name.toLowerCase() === search.toLowerCase()).map(countr => <div >{countr.name}</div>)
-                 }
-                </div> */}
-            </div>
+            <div className='my-3 p-3'>
+                {(foundLand && foundLand.name.length>0) ? <SearchedLandCard foundLand= {foundLand}/> : <p>Please write a name</p>
+                }
+                
+           </div>
+              
+        </div>
         
     )
     
@@ -33,54 +47,8 @@ export default Search
 
 /*
 
-    //-----------------
-    <button class="btn btn-outline-secondary" type="submit">
-                        <Link to={'/search/'+ inputValue}>Search</Link>
-                    </button>
 
 
-
-
-
-
-   import { useSearchParams } from 'react-router-dom';
-
-
-const Search = ({countries})=>{
-    const [searchParams , setSearchParams] = useSearchParams();
-    const searchLand = searchParams.get('searchName') || '';
-
-    const handleSearch = ((e)=>{
-        const searchName = e.target.value;
-        if(searchName){ 
-            setSearchParams({searchName});
-        }else {
-            setSearchParams({});
-        }
-    })
-
-    return(
-        <div>
-            <form class="d-flex">
-                    <input class="form-control me-2" type="search"
-                        placeholder="Search" aria-label="Search"
-                        onChange={handleSearch} 
-                        value={searchLand}/>
-            </form>
-
-            <ul>
-                {countries.filter(land=>land.toLowerCase().includes(searchLand).toLowerCase())
-                 .map((searched,i)=>(
-                     <li key={i}>{searched}</li>
-                 ))
-                }
-            </ul>
-        </div>
-    )
-    
-}
-
-export default Search
 
 
 */

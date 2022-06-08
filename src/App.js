@@ -36,15 +36,12 @@ function App() {
       fetchData()
     } , [])
 
-  
-
-
     return (
     <Router>
       <div className="App my-1 ">
       <ThemeContextProvider>
           <header >
-            <h1 className='mb-4 '>Countries and Regions in the World</h1>
+            <h1 className='mb-4 '>🇦🇪🇦🇷 Countries and Regions in the World 🇩🇪🇩🇯</h1>
             <Navigation countries={countries}/> 
             
           </header>
@@ -87,10 +84,9 @@ function App() {
               <Route path = '/continent/:name' 
                      element = {<Continent countries={countries}/>}/>
 
-              {/* <Route path = '/search/:search'
-                     element = {<div className='home-items'><Search countries={countries}/></div>}/>
               <Route path = '/search/'
-                     element = {<div className='home-items'><Search/></div>}/> */}
+                     element = {<div className='home-items'><Search countries={countries}/></div>}/>
+              
 
               <Route path = '/visited/'
                      element = {<div className='home-items'>Visited lands here</div>}/>

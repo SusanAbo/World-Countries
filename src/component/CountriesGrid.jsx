@@ -61,6 +61,7 @@ const CountriesGrid = ({landName , flag , idLand , countries})=>{
                     
                     <button className='btn btn-outline-success m-1'
                     onClick={(e)=>{ 
+                        e.preventDefault()
                         console.log(landName);
                         visitedLand(idLand ,landName)
                     }} 
@@ -68,6 +69,7 @@ const CountriesGrid = ({landName , flag , idLand , countries})=>{
 
                     <button className='btn btn-outline-secondary m-1'
                     onClick={(e)=>{
+                        e.preventDefault()
                         console.log('idLand',idLand);
                         wishedLand(idLand ,landName)
                     }}

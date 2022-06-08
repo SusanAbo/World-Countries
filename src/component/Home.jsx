@@ -19,11 +19,11 @@ export default function Home() {
             <img className ="card" src='/World-Flag-map.jpg' alt='map'/>
             <br/>
             <div className ="card">
-                <div className ="card-header p-3">⏰ Time Now : <b className='border p-1 text-primary'>{time}</b>  <br/>Your current TimeZone : <b className='p-1 text-primary'>{timezone}</b></div>
+                <div className ="card-header p-3">⏰ 𝗧𝗶𝗺𝗲 𝗡𝗼𝘄 : <b className='border p-1 text-primary'>{time}</b>  <br/>Your current TimeZone : <b className='p-1 text-primary'>{timezone}</b></div>
                     <div className="card-body">
-                        <h5 className="card-title">Weather Now :</h5>
+                        <h4 className="card-title">Ｗｅａｔｈｅｒ Ｎｏｗ:</h4>
                         <p className="card-text weather"> ☁ ☀ ☁ </p>
-                        <p>📅 Today is : <b className='p-1 text-primary'>{day} , {date}</b></p>
+                        <p>📅 𝗧𝗼𝗱𝗮𝘆 𝗶𝘀 : <b className='p-1 text-primary'>{day} , {date}</b></p>
                        
                     </div>
             </div>
