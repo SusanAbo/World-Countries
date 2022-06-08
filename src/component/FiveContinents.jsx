@@ -5,15 +5,15 @@ import {Link} from 'react-router-dom'
 const FiveContinents = ()=>{
   let continents = [
     {conName :'Africa', img:'imges/africa.jpg', 
-      id:'01', url:'/continent/Africa' },
+      id:'01', url:'Africa' },
     {conName :'The Americas' , img:'imges/north-america.jpg', 
-      id:'02', url:'/continent/Americas' },
+      id:'02', url:'Americas' },
     {conName :'Asia', img:'imges/asia.jpg', 
-      id:'03', url:'/continent/Asia'},
+      id:'03', url:'Asia'},
     {conName :'Europe', img:'imges/Europe.jpg', 
-      id:'04', url:'/continent/Europe'},
+      id:'04', url:'Europe'},
     {conName :'Oceania', img:'imges/Oceania.jpg', 
-      id:'05', url:'/continent/Oceania' }
+      id:'05', url:'Oceania' }
   ]
 
   return(
@@ -24,7 +24,7 @@ const FiveContinents = ()=>{
             <img src={con.img} className="card-img-top" alt="card-img-top"/>
             <div className="card-body">
                 <h3 className="card-title text-danger">{con.conName}</h3>
-                     <Link to={con.url}><button class="btn btn-outline-warning"><small className="text-dark">Check Lands</small></button></Link>
+                     <Link to={con.url}><button className="btn btn-outline-warning"><small className="text-dark">Check Lands</small></button></Link>
             </div>
           </div>
       

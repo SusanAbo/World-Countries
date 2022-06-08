@@ -52,3 +52,13 @@
     max-height: 60%;
     margin: 0 auto;
   }
+
+  @media (orientation : portrait){
+    .home-items , .countries-container{
+      top: 250px;
+    }
+    .lands-card{
+      margin : 0 auto;
+      width: 250px;
+    }
+  }

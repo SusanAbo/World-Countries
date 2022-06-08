@@ -32,7 +32,7 @@ const Search = ({countries})=>{
                         }>𝙎𝙚𝙖𝙧𝙘𝙝</button>
                 </form>
             <div className='my-3 p-3'>
-                {(foundLand && foundLand.name.length>0) ? <SearchedLandCard foundLand= {foundLand}/> : <p>Please write a name</p>
+                {(foundLand && foundLand.name.length>0) ? <SearchedLandCard foundLand= {foundLand} key={Math.random()}/> : <p>Please write a name</p>
                 }
                 
            </div>

@@ -6,7 +6,7 @@ import './css/continents.css';
 import React , {useState , useEffect , useContext} from "react";
 import Navigation from './component/Navigation';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import ThemeContextProvider, { ThemeContext } from './context/ThemeContext';
+import { ThemeContext } from './context/ThemeContext';
 
 import Home from './component/Home'
 import MyGrid from './component/MyGrid';
@@ -14,6 +14,7 @@ import Country from './component/Country';
 import FiveContinents from './component/FiveContinents';
 import Continent from './component/Continent';
 import Search from './component/Search';
+import Play from './component/Play';
 
 
 function App() {
@@ -50,31 +51,33 @@ function App() {
           </header>
           <div className='container'>
               <Routes>
-                  <Route path = '/' 
+                  <Route path = 'World-Countries/' 
                         element = {<Home/>}/>
 
-                  <Route path = '/all_countries/:landName' 
+                  <Route path = 'World-Countries/all_countries/:landName' 
                      element = {<div className='land-details'>
                        <Country countries={countries}/></div>}/>   
                                
-                  <Route path = '/all_countries' 
+                  <Route path = 'World-Countries/all_countries' 
                         element = 
                         {<MyGrid countries={countries}/>}/>
                  
 
-              <Route path = '/continent/' 
+              <Route path = 'World-Countries/continent/' 
                      element = {<div className='home-items'> <FiveContinents/></div>}/>
-              <Route path = '/continent/:name' 
+              <Route path = 'World-Countries/continent/:name' 
                      element = {<Continent countries={countries}/>}/>
 
-              <Route path = '/search/'
+              <Route path = 'World-Countries/search/'
                      element = {<div className='home-items'><Search countries={countries}/></div>}/>
               
 
-              <Route path = '/visited/'
+              <Route path = 'World-Countries/visited/'
                      element = {<MyGrid countries={visited}/>}/>
-              <Route path = '/to_visit/'
+              <Route path = 'World-Countries/to_visit/'
                      element = {<MyGrid countries={wished}/>}/>
+              <Route path = 'World-Countries/play' 
+                        element = {<Play countries={countries}/>}/>
                                     
               </Routes>
           </div>

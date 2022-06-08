@@ -9,7 +9,7 @@ const SearchedLandCard = ({foundLand})=>{
             <div className="card-img" >
                     <img className="card-img-top" src={foundLand.flag} alt='land-flag' width={'40%'}/>
             </div>
-            <div class="card-body ">
+            <div className="card-body ">
                 <h3 className="card-title text-danger">{'📍 '+foundLand.name}</h3>
 
                     <ul className="card-ul">

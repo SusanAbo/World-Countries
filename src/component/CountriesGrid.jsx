@@ -10,7 +10,7 @@ const CountriesGrid = ({landName , flag , idLand, country })=>{
     return(
         <div className="lands-card card"  >
 
-            <Link to={'/all_countries/'+landName} > 
+            <Link to={landName} > 
                     <div className="card-img">
                     <img className="card-img-top" src={flag} alt='land-flag' style={{maxWidth:'100%',maxHeight:'100%'}}/>
                     </div>
@@ -43,8 +43,8 @@ const CountriesGrid = ({landName , flag , idLand, country })=>{
 
                     </div>
                 </div>
-            </div>
-            
+        </div>
+         
         )
         
 }

@@ -1,7 +1,7 @@
 import React , { useState , useEffect }from "react";
 import { useParams} from 'react-router-dom'
 
-const Continent = (countries)=>{
+const Continent = ()=>{
 
     let {name} = useParams()
     const [continent , setContinent ] = useState([])
@@ -30,7 +30,7 @@ const Continent = (countries)=>{
              <div className="countries-container top-50">
         {continent && continent.map((land)=>{
             return(
-                  <div class="card w-100 p-1">
+                  <div className="card w-100 p-1" key={Math.random()}>
                     <h3 className="card-title text-danger mb-2 text-truncate">{land.flag} {land.name.common}</h3>
                     <ul className="card-ul">
                         <li>Region : <b>{land.region}</b> </li>

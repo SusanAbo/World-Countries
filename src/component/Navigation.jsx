@@ -9,26 +9,26 @@ const Navigation = ()=>{
        
         <div className="nav">
             <div>
+                <button className="btn" id="home">
+                    <Link to={'World-Countries/'}>🏠 HOME</Link></button>
                 <button className="btn">
-                    <Link to={'/'}>🏠 HOME</Link></button>
-                <button className="btn">
-                    <Link to={'/all_countries'}>🗺 All Countries</Link></button>
+                    <Link to={'World-Countries/all_countries'}>🗺 All Countries</Link></button>
 
                 <button className="btn cont-btn">
-                    <Link to={'/continent'}>🌎 Continent</Link>
+                    <Link to={'World-Countries/continent'}>🌎 Continent</Link>
                         <ul className="cont-sub-list">        
-                            <li ><Link to={'/continent/Africa'}>Africa</Link></li>
-                            <li ><Link to={'/continent/Americas'}>The Americas</Link></li>
-                            <li ><Link to={'/continent/Asia'}>Asia</Link></li>
-                            <li ><Link to={'/continent/Europe'}>Europe</Link></li>
-                            <li ><Link to={'/continent/Oceania'}>Oceania</Link></li>
+                            <li ><Link to={'World-Countries/continent/Africa'}>Africa</Link></li>
+                            <li ><Link to={'World-Countries/continent/Americas'}>The Americas</Link></li>
+                            <li ><Link to={'World-Countries/continent/Asia'}>Asia</Link></li>
+                            <li ><Link to={'World-Countries/continent/Europe'}>Europe</Link></li>
+                            <li ><Link to={'World-Countries/continent/Oceania'}>Oceania</Link></li>
                             
                         </ul>
                 </button>
             </div>
 
             <button className="btn border">
-                    <Link to={'/search'}>🇸​​​​​🇪​​​​​🇦​​​​​🇷​​​​​🇨​​​​​🇭​​​​​ 🔎</Link></button>
+                    <Link to={'World-Countries/search'}>🇸​​​​​🇪​​​​​🇦​​​​​🇷​​​​​🇨​​​​​🇭​​​​​ 🔎</Link></button>
 
             <div>
                 <button className="btn btn-outline-info"
@@ -36,12 +36,13 @@ const Navigation = ()=>{
                             localStorage.getItem('wished');
                             
                         }}
-                ><Link to={'/visited'}>Visited Countries 🛩</Link></button>
+                ><Link to={'World-Countries/visited'}>Visited Countries 🛩</Link></button>
                 <button className="btn btn-outline-info mx-2">
-                    <Link to={'/to_visit'}>wish to visit 🏖</Link></button>
+                    <Link to={'World-Countries/to_visit'}>wish to visit 🏖</Link></button>
             </div>
-                 
 
+            <button className="btn" id="home">
+                    <Link to={'World-Countries/play'}>🅿🅻🅰🆈</Link></button>
                 
         </div>
        
@@ -49,7 +50,3 @@ const Navigation = ()=>{
 }
 
 export default Navigation
-/*
-/
-
-*/

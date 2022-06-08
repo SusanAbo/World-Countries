@@ -25,3 +25,10 @@
     align-content: center;
     justify-items: center;
 }
+
+@media (orientation : portrait){
+    .five-cons{
+      top: 250px;
+    }
+    
+  }

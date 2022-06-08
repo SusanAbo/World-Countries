@@ -5,12 +5,12 @@ const Country = ({countries})=>{
     let {landName} = useParams() 
     let {name , region , capital , flag , languages , nativeName , area , population } = countries && countries.find(e=>e.name ===landName )
     return (
-        // <div>Test from Country</div>
+        
         <div className="card">
             <div className="card-img" >
                     <img className="card-img-top" src={flag} alt='land-flag' width={'40%'}/>
             </div>
-            <div class="card-body ">
+            <div className="card-body ">
                 <h3 className="card-title text-danger">{'📍 '+name}</h3>
 
                 <ul className="card-ul">

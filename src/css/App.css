@@ -18,4 +18,10 @@ html, body{
   background-color: #82ccdd;
 
 }
+.up{
+  position: fixed;
+  top: 70vh;
+  left: 15px;
+  font-size: 1.5rem;
+}
   

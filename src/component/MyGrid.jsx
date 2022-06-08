@@ -1,6 +1,6 @@
 import React, { useContext, useState , useEffect } from "react";
 import CountriesGrid from './CountriesGrid'
-import { ThemeContext } from "../context/ThemeContext";
+
 
 
 export default function MyGrid({countries}) {
